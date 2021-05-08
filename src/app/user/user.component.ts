@@ -9,6 +9,7 @@ import { DialogAddUserComponent } from '../dialogs/dialog-add-user/dialog-add-us
 export class UserComponent implements OnInit {
 
 
+
   constructor(public dialog: MatDialog) { }
   openDialog() {
     this.dialog.open(DialogAddUserComponent);

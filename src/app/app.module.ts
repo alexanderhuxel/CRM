@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogAddUserComponent } from './dialogs/dialog-add-user/dialog-add-user.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSidenavModule,
     MatFormFieldModule,
     MatDialogModule,
+    FormsModule,
+    NgModel,
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,

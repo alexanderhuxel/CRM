@@ -3,19 +3,19 @@
     <div>
         <mat-form-field class="mr-16" appearance="outline">
             <mat-label>Firstname</mat-label>
-            <input matInput placeholder="Placeholder">
+            <input [(ngmodel)]="user.firstName" matInput placeholder="Placeholder">
             <!-- <mat-hint>pls enter the firstname</mat-hint> -->
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Lastname</mat-label>
-            <input matInput placeholder="Placeholder">
+            <input [(ngModel)]="user.lastName" matInput placeholder="Placeholder">
             <!-- <mat-hint>pls enter the lastname</mat-hint> -->
         </mat-form-field>
     </div>
     <div>
         <mat-form-field class="example-full-width full-width" appearance="fill">
             <mat-label>Choose the birthdate</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input matInput [(ngModel)]="user.birthDate" [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <!-- <mat-hint>choose the birthdate</mat-hint> -->
@@ -24,18 +24,18 @@
             <div>
                 <mat-form-field class="full-width" appearance="outline">
                     <mat-label>Street + House no.</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input [(ngModel)]="user.street" matInput placeholder="Placeholder">
                     <!-- <mat-hint>pls enter the lastname</mat-hint> -->
                 </mat-form-field>
             </div>
             <mat-form-field class="mr-16" appearance="outline">
                 <mat-label>Zip Code</mat-label>
-                <input matInput placeholder="Placeholder">
+                <input [(ngModel)]="user.zipCode" matInput placeholder="Placeholder">
                 <!-- <mat-hint>pls enter the lastname</mat-hint> -->
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>City</mat-label>
-                <input matInput placeholder="Placeholder">
+                <input [(ngModel)]="user.city" matInput placeholder="Placeholder">
                 <!-- <mat-hint>pls enter the lastname</mat-hint> -->
             </mat-form-field>
         </div>
@@ -44,5 +44,5 @@
 </div>
 <div mat-dialog-actions>
     <button class="mr-16" mat-raised-button>Cancle</button>
-    <button mat-raised-button>Save</button>
+    <button (click)="saveUser()" mat-raised-button>Save</button>
 </div>
