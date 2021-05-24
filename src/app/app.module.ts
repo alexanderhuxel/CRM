@@ -10,29 +10,44 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogAddUserComponent } from './dialogs/dialog-add-user/dialog-add-user.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { MatMenuModule } from '@angular/material/menu'
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogEditUserNameComponent } from './dialogs/dialog-edit-user-name/dialog-edit-user-name.component';
+import { DialogEditUserAddressComponent } from './dialogs/dialog-edit-user-address/dialog-edit-user-address.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailComponent,
+    DialogEditUserNameComponent,
+    DialogEditUserAddressComponent
   ],
   imports: [
     BrowserModule,
     MatTooltipModule,
+    MatCardModule,
     MatSidenavModule,
+    MatProgressBarModule,
+    AngularFireModule.initializeApp(environment.firebase),
     MatFormFieldModule,
     MatDialogModule,
-    FormsModule,
-    NgModel,
+    AngularFirestoreModule,
+    MatMenuModule,
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
@@ -40,7 +55,8 @@ import { FormsModule, NgModel } from '@angular/forms';
     MatButtonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
