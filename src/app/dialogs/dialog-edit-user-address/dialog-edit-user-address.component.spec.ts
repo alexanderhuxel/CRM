@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 import { DialogEditUserAddressComponent } from './dialog-edit-user-address.component';
 
@@ -8,9 +9,16 @@ describe('DialogEditUserAddressComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogEditUserAddressComponent ]
+      declarations: [DialogEditUserAddressComponent],
+      imports: [MatDialogModule],
+      providers: [
+        {
+          provide: MatDialogRef,
+          usevalue: {}
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
